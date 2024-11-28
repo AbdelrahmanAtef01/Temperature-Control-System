@@ -84,7 +84,7 @@ The project is modularly designed with a layered architecture:
    Clone the repository to your local machine using the following command:
    
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/AbdelrahmanAtef01/Temperature-Control-System
    ```
 3. **Setup Hardware**:
    - Connect all components as per the circuit diagram.
