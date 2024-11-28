@@ -24,6 +24,7 @@ The system utilizes two **AtMega32** microcontrollers connected via the **SPI (S
 3. **User Interface**:
    - A **16x2 LCD** for temperature display and feedback. 📺
    - A **4x4 Keypad** for user input to set thresholds and select modes. ⌨️
+   - **Buttons & switch** for controlling manual mode. 🖲️
 
 4. **Communication**:
    - **SPI protocol** for seamless communication between the two microcontrollers. 🔄
@@ -66,7 +67,8 @@ The project is modularly designed with a layered architecture:
 - **ADC (Analog-to-Digital Converter)**: Reads temperature sensor data. 📊
 - **Timers**:
   - Handles task scheduling in RTOS. ⏱️
-  - Generates PWM signals for precise heater and fan control. 🎛️
+  - Generates PWM signals for temperature level Led showing. 🎛️
+  - Handles communication timing. ⏱️
 - **SPI Protocol**: Ensures communication between microcontrollers. 🔄
 
 ---
@@ -80,22 +82,23 @@ The project is modularly designed with a layered architecture:
 
 1. **Pull the Project**: 
    Clone the repository to your local machine using the following command:
+   
    ```bash
    git clone <repository-url>
    ```
-2. **Setup Hardware**:
-   - Connect all components as per the circuit diagram (refer to project documentation).
+3. **Setup Hardware**:
+   - Connect all components as per the circuit diagram.
    - Ensure proper power supply and connections for all components. 🔌
-3. **Flash the Code**:
+4. **Flash the Code**:
    - Flash the appropriate code to each microcontroller:
      - **Control Unit**: Upload the control logic for temperature reading, threshold setting, and SPI communication.
      - **Manual Unit**: Upload the logic for fan and heater control, manual mode, and SPI communication.
-4. **Run the System**:
+5. **Run the System**:
    - Power on the system. ⚡
    - Use the **switch** to toggle between **manual** and **automatic** modes:
      - In **automatic mode**, set the temperature threshold using the **keypad**. The system will maintain the desired temperature automatically. 🌡️
      - In **manual mode**, control the heater and fan directly using the **push buttons**. 🔧
-   - Monitor the temperature and system status on the **LCD** display. 📟
+   - Monitor the temperature, threshold and system status on the **LCD** display. 📟
 
 ---
 
